@@ -17,7 +17,8 @@
 cmake-build-*/
 .idea/**/mongoSettings.xml
 *.iws
-out/
+out/*
+!out/.gitkeep
 .idea_modules/
 atlassian-ide-plugin.xml
 .idea/replstate.xml
