@@ -28,18 +28,29 @@ Para executar o projeto localmente, siga os passos abaixo:
 
 ### Construindo o Projeto
 
-Para construir os binários, selecione sua plataforma e rode um dos seguintes comandos de acordo:
-- Linux/amd64:
+#### make
+
+- Caso você possua o pacote `make`, basta executar o seguinte comando:
     ```shell
-    GOOS="linux" GOARCH="amd64" go build -ldflags="-s -w" -o ./out/linux_amd64 ./cmd/httpserver/main.go
+    make
     ```
-- Windows/amd64:
-    ```shell
-    GOOS="windows" GOARCH="amd64" go build -ldflags="-s -w" -o ./out/windows_amd64.exe ./cmd/httpserver/main.go
-    ```
-    - Obs: O Windows defender pode acusar o binário do go como um trojan:
-      - Mais detalhes: [Go Windows Defender no reddit](https://www.reddit.com/r/golang/comments/1au4e98/updated_to_122_now_windows_security_thinks_go_is/)
-      - Uma possível solução: [Recomendação no fórum Microsoft](https://answers.microsoft.com/en-us/windows/forum/all/got-trojan-notification-after-build-golang-from/7b2c6be1-a142-4865-8aff-cf6c7ebfb9ea)
+
+#### manualmente:
+
+- Para construir os binários, selecione sua plataforma e rode um dos seguintes comandos de acordo:
+    - Linux/amd64:
+        ```shell
+        GOOS="linux" GOARCH="amd64" go build -ldflags="-s -w" -o ./out/linux_amd64 ./cmd/httpserver/main.go
+        ```
+    - Windows/amd64:
+        ```shell
+        GOOS="windows" GOARCH="amd64" go build -ldflags="-s -w" -o ./out/windows_amd64.exe ./cmd/httpserver/main.go
+        ```
+        - Obs: O Windows defender pode acusar o binário do go como um trojan:
+            - Mais
+              detalhes: [Go Windows Defender no reddit](https://www.reddit.com/r/golang/comments/1au4e98/updated_to_122_now_windows_security_thinks_go_is/)
+            - Uma possível
+              solução: [Recomendação no fórum Microsoft](https://answers.microsoft.com/en-us/windows/forum/all/got-trojan-notification-after-build-golang-from/7b2c6be1-a142-4865-8aff-cf6c7ebfb9ea)
 
 Após rodar qualquer um dos comandos, o arquivo desejado vai estar localizado dentro da pasta [out](./out)
 
