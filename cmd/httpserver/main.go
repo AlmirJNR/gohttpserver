@@ -3,7 +3,7 @@ package main
 import (
 	"goHttpServer/internal/controllers/healthcheck"
 	"goHttpServer/internal/controllers/hello"
-	"goHttpServer/pkg/utils"
+	"goHttpServer/internal/pkg"
 	"log"
 	"net/http"
 )
@@ -13,6 +13,6 @@ func main() {
 	server.HandleFunc("GET /health-check", healthcheck.Handle)
 	server.HandleFunc("POST /hello", hello.Handle)
 
-	err := utils.ListenAndServe(8080, server)
+	err := pkg.ListenAndServe(8080, server)
 	log.Fatal(err)
 }
